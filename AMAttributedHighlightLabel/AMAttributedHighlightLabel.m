@@ -340,33 +340,7 @@
             currentSelectedString = [touchableWords objectAtIndex:i];
         }
     }
-}
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    if(currentSelectedString != nil)
-    {
-        NSMutableAttributedString *newAttrString = [self.attributedText mutableCopy];
-        [newAttrString removeAttribute:NSForegroundColorAttributeName range:currentSelectedRange];
-        if([currentSelectedString hasPrefix:@"@"])
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:mentionTextColor range:currentSelectedRange];
-        else if ([currentSelectedString hasPrefix:@"#"])
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:hashtagTextColor range:currentSelectedRange];
-        else if ([currentSelectedString hasPrefix:@"http://"])
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:currentSelectedRange];
-        else if ([currentSelectedString hasPrefix:@"https://"])
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:currentSelectedRange];
-        else if ([currentSelectedString hasPrefix:@"www."])
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:currentSelectedRange];
-        self.attributedText = newAttrString;
-        
-        // huh?
-        //currentSelectedRange = nil;
-        currentSelectedString = nil;
-    }
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if(currentSelectedString != nil)
     {
         NSMutableAttributedString *newAttrString = [self.attributedText mutableCopy];
