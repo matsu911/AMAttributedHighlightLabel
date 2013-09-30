@@ -116,15 +116,9 @@
             {
                 [attrString addAttribute:NSForegroundColorAttributeName value:hashtagTextColor range:matchRange];
             }
-            else if ([tappableWord hasPrefix:@"http://"])
-            {
-                [attrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:matchRange];
-            }
-            else if ([tappableWord hasPrefix:@"https://"])
-            {
-                [attrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:matchRange];
-            }
-            else if ([tappableWord hasPrefix:@"www."])
+            else if ([tappableWord hasPrefix:@"http://"] ||
+                     [tappableWord hasPrefix:@"https://"] ||
+                     [tappableWord hasPrefix:@"www."])
             {
                 [attrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:matchRange];
             }
@@ -328,11 +322,9 @@
                 [newAttrString addAttribute:NSForegroundColorAttributeName value:selectedMentionTextColor range:[[touchableWordsRange objectAtIndex:i] rangeValue]];
             else if ([string hasPrefix:@"#"])
                 [newAttrString addAttribute:NSForegroundColorAttributeName value:selectedHashtagTextColor range:[[touchableWordsRange objectAtIndex:i] rangeValue]];
-            else if ([string hasPrefix:@"http://"])
-                [newAttrString addAttribute:NSForegroundColorAttributeName value:selectedLinkTextColor range:[[touchableWordsRange objectAtIndex:i] rangeValue]];
-            else if ([string hasPrefix:@"https://"])
-                [newAttrString addAttribute:NSForegroundColorAttributeName value:selectedLinkTextColor range:[[touchableWordsRange objectAtIndex:i] rangeValue]];
-            else if ([string hasPrefix:@"www."])
+            else if ([string hasPrefix:@"http://"] ||
+                     [string hasPrefix:@"https://"] ||
+                     [string hasPrefix:@"www."])
                 [newAttrString addAttribute:NSForegroundColorAttributeName value:selectedLinkTextColor range:[[touchableWordsRange objectAtIndex:i] rangeValue]];
             self.attributedText = newAttrString;
             
@@ -353,15 +345,9 @@
         {
             [newAttrString addAttribute:NSForegroundColorAttributeName value:hashtagTextColor range:currentSelectedRange];
             [delegate selectedHashtag:currentSelectedString];
-        } else if ([currentSelectedString hasPrefix:@"http://"])
-        {
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:currentSelectedRange];
-            [delegate selectedLink:currentSelectedString];
-        } else if ([currentSelectedString hasPrefix:@"https://"])
-        {
-            [newAttrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:currentSelectedRange];
-            [delegate selectedLink:currentSelectedString];
-        } else if ([currentSelectedString hasPrefix:@"www."])
+        } else if ([currentSelectedString hasPrefix:@"http://"] ||
+                   [currentSelectedString hasPrefix:@"https://"] ||
+                   [currentSelectedString hasPrefix:@"www."])
         {
             [newAttrString addAttribute:NSForegroundColorAttributeName value:linkTextColor range:currentSelectedRange];
             [delegate selectedLink:currentSelectedString];
