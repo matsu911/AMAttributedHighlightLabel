@@ -28,7 +28,7 @@
         selectedLinkTextColor = UIColorFromRGB(0x4099FF);
         
         NSError *error;
-        regex = [NSRegularExpression regularExpressionWithPattern:@"((@|#)([A-Z0-9a-z(é|ë|ê|è|à|â|ä|á|ù|ü|û|ú|ì|ï|î|í)_]+))|(http(s)?://([A-Z0-9a-z._-]*(/)?)*)" options:NSRegularExpressionCaseInsensitive error:&error];
+        regex = [NSRegularExpression regularExpressionWithPattern:@"((@|#)([A-Z0-9a-z(é|ë|ê|è|à|â|ä|á|ù|ü|û|ú|ì|ï|î|í)_]+))|((http(s)?://)?([%A-Z0-9a-z._-]*(/)?)*)" options:NSRegularExpressionCaseInsensitive error:&error];
         
         touchableWords = [[NSMutableArray alloc] init];
         touchableLocations = [[NSMutableArray alloc] init];
@@ -53,7 +53,7 @@
         selectedLinkTextColor = UIColorFromRGB(0x4099FF);
         
         NSError *error;
-        regex = [NSRegularExpression regularExpressionWithPattern:@"((@|#)([A-Z0-9a-z(é|ë|ê|è|à|â|ä|á|ù|ü|û|ú|ì|ï|î|í)_]+))|(http(s)?://([A-Z0-9a-z._-]*(/)?)*)" options:NSRegularExpressionCaseInsensitive error:&error];
+        regex = [NSRegularExpression regularExpressionWithPattern:@"((@|#)([A-Z0-9a-z(é|ë|ê|è|à|â|ä|á|ù|ü|û|ú|ì|ï|î|í)_]+))|((http(s)?://)?([%A-Z0-9a-z._-]*(/)?)*)" options:NSRegularExpressionCaseInsensitive error:&error];
         
         touchableWords = [[NSMutableArray alloc] init];
         touchableLocations = [[NSMutableArray alloc] init];
@@ -78,7 +78,7 @@
         selectedLinkTextColor = UIColorFromRGB(0x4099FF);
         
         NSError *error;
-        regex = [NSRegularExpression regularExpressionWithPattern:@"((@|#)([A-Z0-9a-z(é|ë|ê|è|à|â|ä|á|ù|ü|û|ú|ì|ï|î|í)_]+))|(http(s)?://([A-Z0-9a-z._-]*(/)?)*)" options:NSRegularExpressionCaseInsensitive error:&error];
+        regex = [NSRegularExpression regularExpressionWithPattern:@"((@|#)([A-Z0-9a-z(é|ë|ê|è|à|â|ä|á|ù|ü|û|ú|ì|ï|î|í)_]+))|((http(s)?://)?([%A-Z0-9a-z._-]*(/)?)*)" options:NSRegularExpressionCaseInsensitive error:&error];
         
         touchableWords = [[NSMutableArray alloc] init];
         touchableLocations = [[NSMutableArray alloc] init];
